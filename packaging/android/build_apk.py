@@ -36,7 +36,7 @@ ROOT = Path(__file__).resolve().parents[2]
 HERE = Path(__file__).resolve().parent
 
 APPLICATION_ID = "io.github.juanluci.starling"
-LABEL = "Starling"
+LABEL = "Vexora-Horizon"
 # --dev and --preview: an app of its own, installed beside the release (which a build signed with
 # another key cannot install over), with its own folder (StarlingActivity.sharedFolder: StarlingDev,
 # StarlingPreview) and its own sign-in and game files. Preview is what starling-client/starling's
@@ -576,7 +576,7 @@ def main():
     add_code(out / "base.apk", libraries, dex, out / "unsigned.apk", args.abi)
     aligned = out / "aligned.apk"
     run(tool(build_tools, "zipalign"), "-P", "16", "-f", "4", out / "unsigned.apk", aligned)
-    apk = out / f"starling{'-' + variant if variant else ''}-{VERSION_NAME}-{args.abi}.apk"
+    apk = out / f"Vexora-Horizon{'-' + variant if variant else ''}-{VERSION_NAME}-{args.abi}.apk"
     sign(build_tools, aligned, apk, out)
     print(apk)
     if args.zip:
